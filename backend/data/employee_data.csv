@@ -1,0 +1,16 @@
+education_level,job_role,location,years_of_experience,salary
+Bachelor's,Software Engineer,Bangalore,2,600000
+Master's,Data Scientist,Hyderabad,4,850000
+PhD,Research Scientist,Delhi,6,1200000
+Bachelor's,System Analyst,Mumbai,3,650000
+Master's,ML Engineer,Bangalore,5,950000
+Bachelor's,Web Developer,Pune,1,500000
+Master's,Data Analyst,Chennai,3,700000
+PhD,AI Researcher,Bangalore,7,1300000
+Bachelor's,Backend Developer,Mumbai,4,750000
+Master's,Full Stack Developer,Hyderabad,5,920000
+Bachelor's,Support Engineer,Chennai,2,520000
+Master's,Cloud Architect,Pune,6,1100000
+PhD,Deep Learning Engineer,Delhi,8,1400000
+Bachelor's,QA Engineer,Bangalore,3,620000
+Master's,BI Developer,Mumbai,4,880000
