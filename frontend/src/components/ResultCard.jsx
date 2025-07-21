@@ -1,3 +1,7 @@
+import ResultCard from "./ResultCard";
+
+// Inside the component return:
+<ResultCard salary={prediction} />
 // frontend/src/components/ResultCard.jsx
 
 import React from "react";
