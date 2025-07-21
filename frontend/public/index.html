@@ -1,0 +1,69 @@
+<!-- frontend/index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Employee Salary Predictor</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; max-width: 500px; margin: auto; }
+    input, select, button { width: 100%; padding: 8px; margin-top: 10px; }
+    h2 { text-align: center; }
+  </style>
+</head>
+<body>
+  <h2>Employee Salary Prediction</h2>
+  
+  <form id="salaryForm">
+    <label>Education Level:</label>
+    <input type="number" name="education_level" required>
+
+    <label>Job Role:</label>
+    <input type="number" name="job_role" required>
+
+    <label>Location:</label>
+    <input type="number" name="location" required>
+
+    <label>Years of Experience:</label>
+    <input type="number" name="years_of_experience" required>
+
+    <button type="submit">Predict Salary</button>
+  </form>
+
+  <h3 id="result"></h3>
+
+  <script>
+    document.getElementById('salaryForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+
+      const formData = new FormData(this);
+      const data = Object.fromEntries(formData.entries());
+
+      // Convert values to numbers
+      for (let key in data) {
+        data[key] = Number(data[key]);
+      }
+
+      try {
+        const response = await fetch("http://localhost:5000/predict", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(data)
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+          document.getElementById("result").innerText = `Predicted Salary: ₹${result.predicted_salary.toFixed(2)}`;
+        } else {
+          document.getElementById("result").innerText = `Error: ${result.error}`;
+        }
+      } catch (err) {
+        document.getElementById("result").innerText = "Could not connect to the server.";
+      }
+    });
+  </script>
+</body>
+</html>
