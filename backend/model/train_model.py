@@ -9,6 +9,8 @@ from sklearn.compose import ColumnTransformer
 from sklearn.pipeline import Pipeline
 from sklearn.metrics import mean_squared_error, r2_score
 from xgboost import XGBRegressor
+from config import DATA_PATH, 
+MODEL_PATH, XGBOOST_PARAMS
 
 # Load dataset
 data_path = "../data/employee_data.csv"
