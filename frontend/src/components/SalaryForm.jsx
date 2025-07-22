@@ -1,4 +1,4 @@
-// frontend/components/SalaryForm.jsx
+import SalaryForm from "./components/SalaryForm";
 
 import React, { useState } from "react";
 
